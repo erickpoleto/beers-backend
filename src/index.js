@@ -6,7 +6,7 @@ const requireDir = require('require-dir');
 require("dotenv").config()
 
 const app = express();
-app.use(cors())
+app.use(cors({origin: 'https://beers-backend.herokuapp.com/'}))
 app.use(express.json());
 
 

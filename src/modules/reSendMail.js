@@ -6,7 +6,7 @@ const mailer = require('../modules/mailer')
 const reSend = async (res, User,email) => {
         try{
             const token = crypto.randomBytes(20).toString('hex');
-            await User.findByIdAndUpdate(user.id, {$set: {
+            await User.findByIdAndUpdate(User.id, {$set: {
                 confirmToken: token,
             }})
             //send
