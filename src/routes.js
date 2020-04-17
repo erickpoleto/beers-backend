@@ -25,7 +25,7 @@ routes.get('/token/test', MongoApp.index)
 routes.post('/items', MongoBeer.indexSearch);
 routes.post('/about', MongoBeer.indexNameBeer);
 //beerRate
-routes.post('/rate', MongoBeerRate.create)
+routes.use(authMiddleware).post('/rate', MongoBeerRate.create)
 routes.get('/rate/all', MongoBeerRate.index)
 routes.delete('/delete', MongoBeerRate.delete)
 routes.get('/profile', MongoBeerRate.profile);
